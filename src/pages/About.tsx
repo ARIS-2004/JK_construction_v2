@@ -1,14 +1,15 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import AboutSection from "@/components/AboutSection";
+import StatsSection from "@/components/StatsSection";
+import WhyChooseUs from "@/components/WhyChooseUs";
 
 const About = () => {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate('/');
-  }, [navigate]);
-
-  return null;
+  return (
+    <div className="pt-20">
+      <AboutSection />
+      <StatsSection />
+      <WhyChooseUs />
+    </div>
+  );
 };
 
 export default About;

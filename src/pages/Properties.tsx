@@ -1,14 +1,11 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import ProjectsSection from "@/components/ProjectsSection";
 
-const Properties = () => {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate('/');
-  }, [navigate]);
-
-  return null;
+const Projects = () => {
+  return (
+    <div className="pt-20">
+      <ProjectsSection />
+    </div>
+  );
 };
 
-export default Properties;
+export default Projects;

@@ -7,16 +7,16 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.5rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1440px",
       },
     },
     extend: {
       fontFamily: {
-        sans: ['DM Sans', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
-        display: ['Playfair Display', 'serif'],
+        sans: ['Inter', 'DM Sans', 'sans-serif'],
+        serif: ['Cormorant Garamond', 'Playfair Display', 'serif'],
+        display: ['Cormorant Garamond', 'Playfair Display', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -52,27 +52,29 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        charcoal: {
+          DEFAULT: "hsl(var(--charcoal))",
+          soft: "hsl(var(--charcoal-soft))",
+          deep: "hsl(var(--charcoal-deep))",
         },
-        gold: "hsl(var(--gold))",
-        "gold-dark": "hsl(var(--gold-dark))",
-        midnight: "hsl(var(--midnight))",
-        cream: "hsl(var(--cream))",
+        champagne: {
+          DEFAULT: "hsl(var(--champagne))",
+          light: "hsl(var(--champagne-light))",
+          deep: "hsl(var(--champagne-deep))",
+          glow: "hsl(var(--champagne-glow))",
+        },
+        bone: "hsl(var(--bone))",
+        linen: "hsl(var(--linen))",
         "warm-white": "hsl(var(--warm-white))",
-        emerald: "hsl(var(--emerald))",
+        steel: {
+          DEFAULT: "hsl(var(--steel))",
+          light: "hsl(var(--steel-light))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        md: "calc(var(--radius) - 4px)",
+        sm: "calc(var(--radius) - 8px)",
       },
       keyframes: {
         "accordion-down": {
@@ -87,10 +89,6 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-luxury': 'linear-gradient(135deg, hsl(var(--midnight)) 0%, hsl(var(--midnight-light)) 100%)',
       },
     },
   },

@@ -1,180 +1,122 @@
-import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Linkedin, Twitter, MapPin, Phone, Mail, Award, Users, Building, Star } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { Linkedin, Instagram, Twitter, ArrowUpRight, Mail, Phone } from "lucide-react";
+
+const cols = [
+  {
+    title: "Capabilities",
+    links: ["EPC Delivery", "Steel Plant Construction", "Heavy Fabrication", "Infrastructure", "Maintenance", "Power & Energy"],
+  },
+  {
+    title: "Company",
+    links: ["About JK Group", "Leadership", "Careers", "Press", "Sustainability"],
+  },
+  {
+    title: "Resources",
+    links: ["Project Portfolio", "Case Studies", "Safety Standards", "Compliance"],
+  },
+];
 
 const Footer = () => {
-  const quickLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Properties', href: '/properties' },
-    { name: 'Contact', href: '/contact' },
-  ];
-
-  const propertyTypes = [
-    { name: 'Luxury Apartments', href: '/properties' },
-    { name: 'Penthouses', href: '/properties' },
-    { name: 'Villas', href: '/properties' },
-    { name: 'Commercial Spaces', href: '/properties' },
-  ];
-
-  const services = [
-    { name: 'Property Development', href: '/services' },
-    { name: 'Investment Advisory', href: '/services' },
-    { name: 'Property Management', href: '/services' },
-    { name: 'Interior Design', href: '/services' },
-  ];
-
-  const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-  ];
-
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-midnight via-midnight-dark to-slate-900 rounded-t-3xl">
-      {/* Premium Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-slow" />
-      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse-slow delay-1000" />
-      
-      <div className="container mx-auto px-6 lg:px-12 py-16 relative z-10">
-        {/* Top Section */}
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-12">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-3 mb-6 group">
-              <img
-                src="/logo.png"
-                alt="JK Infrastructure"
-                className="w-20 h-20 object-contain group-hover:scale-110 transition-all duration-500"
-              />
-              <div>
-                <span className="font-serif font-bold text-white text-xl">JK Infrastructure</span>
-              </div>
-            </Link>
-            
-            <p className="text-white/80 leading-relaxed mb-6 text-base">
-              Building tomorrow's <span className="text-gold-gradient font-semibold">landmarks</span> today. 
-              Creating exceptional living experiences with unmatched quality and innovation.
-            </p>
+    <footer className="relative bg-charcoal-deep text-warm-white overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.05]" style={{
+        backgroundImage:
+          "linear-gradient(hsl(var(--warm-white)/0.5) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--warm-white)/0.5) 1px, transparent 1px)",
+        backgroundSize: "60px 60px",
+      }} />
+      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[50rem] h-[50rem] rounded-full bg-champagne/[0.06] blur-3xl" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-champagne/40 to-transparent" />
 
-            <div className="flex gap-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href="/"
-                  className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20"
-                >
-                  <social.icon className="w-5 h-5 text-white hover:text-primary transition-colors" />
+      <div className="container mx-auto px-6 lg:px-8 relative">
+        <div className="pt-14 lg:pt-20 pb-10 border-b border-warm-white/10">
+          <div className="grid lg:grid-cols-12 gap-8">
+            <div className="lg:col-span-7">
+              <div className="text-[10px] uppercase tracking-[0.3em] text-warm-white/50 mb-4">
+                JK Group · Infrastructure & Engineering
+              </div>
+              <div className="font-display text-[clamp(2.4rem,7vw,6rem)] leading-[0.92] text-warm-white">
+                Built for the <br />
+                <span className="gold-italic italic">long horizon.</span>
+              </div>
+              <div className="mt-6 flex flex-wrap items-center gap-2">
+                <Link to="/contact" className="btn-gold !px-5 !py-2.5 !text-[12px]">
+                  Start a project
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
+                <a href="mailto:projects@jkgroup.in" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[12px] border border-warm-white/20 hover:border-champagne hover:text-champagne transition-all duration-500">
+                  <Mail className="w-3.5 h-3.5" /> projects@jkgroup.in
                 </a>
-              ))}
+              </div>
             </div>
-          </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-serif font-bold text-white mb-6 text-lg flex items-center gap-2">
-              <Star className="w-5 h-5 text-primary" />
-              Quick Links
-            </h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-white/70 hover:text-primary transition-all duration-300 text-sm font-medium hover:translate-x-1 flex items-center gap-2 group"
-                  >
-                    <div className="w-1 h-1 rounded-full bg-primary/50 group-hover:bg-primary transition-colors" />
-                    {link.name}
-                    <div className="w-0 group-hover:w-4 transition-all duration-300 overflow-hidden">
-                      <span className="text-primary">↗</span>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="font-serif font-bold text-white mb-6 text-lg flex items-center gap-2">
-              <Award className="w-5 h-5 text-emerald" />
-              Services
-            </h4>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service.name}>
-                  <Link
-                    to={service.href}
-                    className="text-white/70 hover:text-emerald transition-all duration-300 text-sm font-medium hover:translate-x-1 flex items-center gap-2 group"
-                  >
-                    <div className="w-1 h-1 rounded-full bg-emerald/50 group-hover:bg-emerald transition-colors" />
-                    {service.name}
-                    <div className="w-0 group-hover:w-4 transition-all duration-300 overflow-hidden">
-                      <span className="text-emerald">↗</span>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Contact Section */}
-        <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 mb-8">
-          <h4 className="font-serif font-bold text-white mb-4 text-lg flex items-center gap-2">
-            <MapPin className="w-5 h-5 text-primary" />
-            Get In Touch
-          </h4>
-          <div className="grid md:grid-cols-4 gap-4">
-            <a href="tel:+919831683494" className="flex items-center gap-3 text-white/70 hover:text-primary transition-all duration-300 p-3 rounded-xl hover:bg-white/5 group">
-              <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-                <Phone className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <div className="text-xs text-white/50 uppercase tracking-wide">Primary</div>
-                <span className="font-medium">+91 98316 83494</span>
-              </div>
-            </a>
-            <a href="tel:+916290834323" className="flex items-center gap-3 text-white/70 hover:text-primary transition-all duration-300 p-3 rounded-xl hover:bg-white/5 group">
-              <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-                <Phone className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <div className="text-xs text-white/50 uppercase tracking-wide">Secondary</div>
-                <span className="font-medium">+91 62908 34323</span>
-              </div>
-            </a>
-            <a href="mailto:jkl.kolkata4@gmail.com" className="flex items-center gap-3 text-white/70 hover:text-accent transition-all duration-300 p-3 rounded-xl hover:bg-white/5 group">
-              <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition-colors">
-                <Mail className="w-5 h-5 text-accent" />
-              </div>
-              <div>
-                <div className="text-xs text-white/50 uppercase tracking-wide">Email Us</div>
-                <span className="font-medium">jkl.kolkata4@gmail.com</span>
-              </div>
-            </a>
-            <div className="flex items-center gap-3 text-white/70 p-3 rounded-xl">
-              <div className="w-10 h-10 rounded-xl bg-emerald/20 flex items-center justify-center">
-                <MapPin className="w-5 h-5 text-emerald" />
-              </div>
-              <div>
-                <div className="text-xs text-white/50 uppercase tracking-wide">Visit Us</div>
-                <span className="font-medium text-xs">Premises No. 595 & 570, Plot No. AA IIB-1274, Kolkata - 700156</span>
-              </div>
+            <div className="lg:col-span-5 lg:pl-8 lg:border-l lg:border-warm-white/10">
+              <div className="text-[10px] uppercase tracking-[0.3em] text-warm-white/50 mb-3">Newsletter</div>
+              <p className="text-warm-white/65 text-[13px] leading-relaxed mb-4 max-w-md">
+                Quarterly briefings on industrial construction, sector trends and select case studies.
+              </p>
+              <form className="flex items-stretch gap-2" onSubmit={(e) => e.preventDefault()}>
+                <input
+                  type="email"
+                  placeholder="Your work email"
+                  className="flex-1 bg-warm-white/5 border border-warm-white/15 focus:border-champagne outline-none rounded-full px-4 py-2.5 text-[13px] placeholder:text-warm-white/40 transition-colors"
+                />
+                <button className="btn-gold !px-5 !py-2.5 !text-[12px]">Subscribe</button>
+              </form>
             </div>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/60 text-sm">
-            © {new Date().getFullYear()} <span className="text-gold-gradient font-semibold">JK Infrastructure</span>. All rights reserved.
-          </p>
-          <div className="flex gap-6 text-white/60 text-sm">
-            <a href="#" className="hover:text-primary transition-colors hover:underline">Privacy Policy</a>
-            <a href="#" className="hover:text-primary transition-colors hover:underline">Terms of Service</a>
-            <a href="#" className="hover:text-primary transition-colors hover:underline">Cookie Policy</a>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 lg:gap-8 py-10">
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 rounded-full bg-warm-white/10 flex items-center justify-center font-display text-sm">JK</div>
+              <span className="font-display text-base">JK Group</span>
+            </div>
+            <p className="text-[12px] text-warm-white/55 leading-relaxed mb-4 max-w-xs">
+              Infrastructure & EPC contractor delivering across India since 2008.
+            </p>
+            <div className="space-y-1.5 text-[12px] text-warm-white/65">
+              <a href="tel:+919876543210" className="flex items-center gap-2 hover:text-champagne transition-colors">
+                <Phone className="w-3 h-3" /> +91 98765 43210
+              </a>
+              <a href="mailto:projects@jkgroup.in" className="flex items-center gap-2 hover:text-champagne transition-colors">
+                <Mail className="w-3 h-3" /> projects@jkgroup.in
+              </a>
+            </div>
+          </div>
+
+          {cols.map((c) => (
+            <div key={c.title}>
+              <div className="text-[9px] uppercase tracking-[0.3em] text-warm-white/50 mb-3.5">{c.title}</div>
+              <ul className="space-y-2">
+                {c.links.map((l) => (
+                  <li key={l}>
+                    <a href="#" className="text-[12px] text-warm-white/70 hover:text-champagne transition-colors inline-flex items-center gap-1 group">
+                      {l}
+                      <ArrowUpRight className="w-2.5 h-2.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 py-5 border-t border-warm-white/10">
+          <div className="text-[11px] text-warm-white/50">
+            © {new Date().getFullYear()} JK Group Infrastructure Pvt. Ltd. All rights reserved.
+          </div>
+          <div className="flex items-center gap-2">
+            {[Linkedin, Twitter, Instagram].map((Icon, i) => (
+              <a key={i} href="#" className="w-8 h-8 rounded-full border border-warm-white/15 hover:border-champagne hover:text-champagne flex items-center justify-center transition-all">
+                <Icon className="w-3 h-3" />
+              </a>
+            ))}
+          </div>
+          <div className="flex items-center gap-4 text-[11px] text-warm-white/50">
+            <a href="#" className="hover:text-champagne transition-colors">Privacy</a>
+            <a href="#" className="hover:text-champagne transition-colors">Terms</a>
+            <a href="#" className="hover:text-champagne transition-colors">Sitemap</a>
           </div>
         </div>
       </div>
